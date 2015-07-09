@@ -32,7 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use thin
 gem 'thin'
 gem 'capistrano-thin'
-gem 'capistrano-passenger'
 
 # Use Capistrano for deployment
 gem 'capistrano', '~> 3.0'
