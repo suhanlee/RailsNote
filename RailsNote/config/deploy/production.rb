@@ -21,13 +21,13 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{deployer@133.130.54.54}
-role :web, %w{deployer@133.130.54.54}
-role :db,  %w{deployer@133.130.54.54}
+role :app, %w{deployer@devsh.in}
+role :web, %w{deployer@devsh.in}
+role :db,  %w{deployer@devsh.in}
 
-set :nginx_server_name, '133.130.54.54'
+set :nginx_server_name, 'devsh.in'
 
-server '133.130.54.54', user: 'deployer', roles: %w{web app}
+server 'devsh.in', user: 'deployer', roles: %w{web app}
 
 
 # Configuration
