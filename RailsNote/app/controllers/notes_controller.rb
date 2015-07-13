@@ -5,6 +5,15 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
     @notes = Note.all
+
+     # Initializes a Markdown parser
+    @markdown = Redcarpet::Markdown.new(NotesHelper::HTMLwithPygments,
+                                        autolink: true,
+                                        tables: true,
+                                        fenced_code_blocks: true,
+                                        highlight: true)
+
+    # @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(prettify: true))
   end
 
   # GET /notes/1
