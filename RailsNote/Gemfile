@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+
+# markdown parser
+gem 'redcarpet'
+
+# code highlight
+gem 'pygments.rb'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
