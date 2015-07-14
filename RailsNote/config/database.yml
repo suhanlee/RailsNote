@@ -26,5 +26,4 @@ production:
   database: RailsNote_production
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: <%= ENV["DATABASE_PASSWORD"] %>
