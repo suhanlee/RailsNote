@@ -1,20 +1,21 @@
 <% @notes.each do |note| %>
-<div class="panel panel-default">
-<div class="panel panel-heading"><h3 class="panel-title"><%= note.subject %></h3></div>
-<div class="panel-body">
+    <div class="panel panel-default">
+      <div class="panel panel-heading"><h3 class="panel-title"><%= note.subject %></h3></div>
+      <div class="panel-body">
 
-  <div class="article-content">
-    <%= raw @markdown.render(note.contents) %>
-  </div>
-  <div class="article-button">
-    <%= link_to 'Show', note, class: "btn btn-default navbar-btn" %>
-    <%= link_to 'Edit', edit_note_path(note), class: "btn btn-default navbar-btn" %>
-    <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %>
-  </div>
-
-</div>
-</div>
+        <div class="article-content">
+          <%= raw @markdown.render(note.contents) %>
+        </div>
+        <div class="article-button">
+          <%= link_to 'Show', note, class: "btn btn-default navbar-btn" %>
+          <%= link_to 'Edit', edit_note_path(note), class: "btn btn-default navbar-btn" %>
+          <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %>
+        </div>
+        <div class="comment-count">
+          <small>( <%= note.comments.size %> )</small>
+        </div>
+      </div>
+    </div>
 <% end %>
-
 
 <%= link_to 'New Note', new_note_path, class: "btn btn-default navbar-btn" %>

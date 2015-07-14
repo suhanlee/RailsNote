@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
-	root 'notes#index'
-  resources :notes
+  # get 'comments/create'
+  # get 'comments/destroy'
+
+
+
+  # resources :notes
+
+  delete 'notes/:note_id/comments/:id' => 'comments#destory', as: :note_comment
+
+  root 'notes#index'
+
+  resources :notes do
+    resource :comments, only: [:destroy, :create]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

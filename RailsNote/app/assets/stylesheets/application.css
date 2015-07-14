@@ -12,8 +12,10 @@
  *
  *= require_tree .
  *= require bootstrap
+ *= require font-awesome
  *= require_self
  */
+
 
 body {
     padding-top: 50px;
