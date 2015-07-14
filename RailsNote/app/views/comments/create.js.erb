@@ -1,0 +1,6 @@
+<% if @comment.errors.size == 0 %>
+$('<%=j render @comment %>').appendTo($("#comments_list_<%=@note.id %>")).hide().fadeIn('fast');
+$("#comments_form_<%=@note.id %> form")[0].reset();
+<% else %>
+alert("Fill in comment...");
+<% end %>

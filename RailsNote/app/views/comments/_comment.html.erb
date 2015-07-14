@@ -1,0 +1,6 @@
+<li id="comment_<%=comment.id %>">
+  <%= comment.body %>,
+  <%= time_ago_in_words(comment.created_at) %> ago
+
+  <%= link_to 'Destroy', note_comment_path(@note, comment), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %>
+</li>
