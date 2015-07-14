@@ -55,6 +55,7 @@ gem 'capistrano-rails-tail-log'
 
 group :production do
 	gem 'rb-readline'
+  gem 'mysql2'
 end
 
 group :development, :test do
