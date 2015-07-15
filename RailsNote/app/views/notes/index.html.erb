@@ -4,7 +4,9 @@
       <div class="panel-body">
 
         <div class="article-image">
-          <%= link_to(image_tag(note.picture_url(:thumb)), note) if note.picture? %>
+          <div class="row">
+            <%= link_to(image_tag(note.picture_url(:thumb), class: "thumbnail"), note) if note.picture? %>
+          </div>
         </div>
         <div class="article-content">
           <%= raw @markdown.render(note.contents) %>
