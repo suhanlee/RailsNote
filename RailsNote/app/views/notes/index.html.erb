@@ -3,6 +3,9 @@
       <div class="panel panel-heading"><h3 class="panel-title"><%= note.subject %></h3></div>
       <div class="panel-body">
 
+        <div class="article-image">
+          <%= link_to(image_tag(note.picture_url(:thumb)), note) if note.picture? %>
+        </div>
         <div class="article-content">
           <%= raw @markdown.render(note.contents) %>
         </div>

@@ -4,7 +4,10 @@
   <strong>Subject:</strong>
   <%= @note.subject %>
 </p>
-
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@note.picture_url) if @note.picture? %>
+</p>
 <p>
   <strong>Contents:</strong>
   <%= @note.contents %>
