@@ -12,12 +12,13 @@
           <%= raw @markdown.render(note.contents) %>
         </div>
         <div class="article-button">
+          <button class="btn btn-primary" type="button">
+            Comments <span class="badge"><%= note.comments.size %></span>
+          </button>
+
           <%= link_to 'Show', note, class: "btn btn-default navbar-btn" %>
           <%= link_to 'Edit', edit_note_path(note), class: "btn btn-default navbar-btn" %>
           <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default navbar-btn" %>
-        </div>
-        <div class="comment-count">
-          <small>( <%= note.comments.size %> )</small>
         </div>
       </div>
     </div>
