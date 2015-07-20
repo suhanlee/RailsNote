@@ -12,11 +12,11 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
 
   def delete_empty_upstream_dirs
-    path = ::File.expand_path(store_dir, root)
-    Dir.delete(path) # fails if path not empty dir
-
-    path = ::File.expand_path(base_store_dir, root)
-    Dir.delete(path) # fails if path not empty dir
+    # path = ::File.expand_path(store_dir, root)
+    # Dir.delete(path) # fails if path not empty dir
+    #
+    # path = ::File.expand_path(base_store_dir, root)
+    # Dir.delete(path) # fails if path not empty dir
   rescue SystemCallError
     true # nothing, the dir is not empty
   end
@@ -33,6 +33,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def cache_dir
+    '/tmp/RailsNote-cache'
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

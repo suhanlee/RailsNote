@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
 
   # resources :notes
+  get 'uploads/*file_path' => 'download#download'
 
   delete 'notes/:note_id/comments/:id' => 'comments#destory', as: :note_comment
 
